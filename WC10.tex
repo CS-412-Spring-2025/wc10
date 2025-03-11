@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{graphs}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\title{Weekly Challenge: Identifying Connected Components Using DFS}
+\date{March 7, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+Given an undirected graph of locations and the distances between them, your task is to determine the number of connected components using Depth First Search (DFS). The tasks require:
+
+\begin{enumerate}
+    \item Identifying the number of connected components in a given graph using DFS and visualizing them.
+    \item Creating a custom graph and identifying the number of connected components in the graph using DFS and visualizing them.
+\end{enumerate}
+The definition of connected components is the same as that you have studied in the course. However, for this weekly challenge, there are some added conditions for the connected component. For an edge to be considered part of the graph, its weight must be less than the threshold $T$. Additionally, if a node is connected to more than one node and at least one of these connections has a weight less than the threshold, then, provided that the other conditions of the connected component are satisfied, it will be part of the connected component.
+
+Removing an edge \( e \in E \) from the graph \( G = (V, E) \), where the distance of \( e \) is equal to or greater than a specified threshold, will alter the edge set \( E \) but will not affect the vertex set \( V \). The set of vertices \( V \) remains unchanged, as the removal of an edge does not impact the vertices that are part of the graph.
+
+\section{Tasks for Students}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Location 1 & Location 2 & Distance \\
+        \hline
+        A & B & 3 \\
+        A & C & 5 \\
+        B & C & 2 \\
+        C & D & 7 \\
+        D & E & 1 \\
+        E & F & 4 \\
+        G & D & 8 \\
+        \hline
+    \end{tabular}
+    \caption{Graph Data}
+    \label{tab:graph_data}
+\end{table}
+\begin{enumerate}
+    \item \textbf{Task 1:} Given the above graph, use DFS to determine the number of connected components and visualize them. Use $T=4$.
+    \item \textbf{Task 2:} Take $T$ equal to your birthday month. Generate a graph of your choice, identify the number of connected components, and visualize. Note that for random generation, you will generate a graph of at least 15 nodes. 
+\end{enumerate}
+
+\section{Submission}
+You will submit:
+\begin{enumerate}
+    \item a python file containing the code for finding the number of connected components and visualization.
+    \item a report containing the graph before and after running the algorithm for each task. Note that the visualization will be an image showing all the connected components. 
+\end{enumerate}
+\section{Evaluation Criteria}
+\begin{itemize}
+    \item Correct implementation of the DFS-based connected components algorithm as specified in the class, incorporating the threshold condition. [40 points]
+    \item Proper handling of isolated nodes. [20 points]
+    \item Flexibility in processing different graph structures. [20 points]
+    \item Quality of visualization.[20 points]
+\end{itemize}
+
+\end{document}
+
